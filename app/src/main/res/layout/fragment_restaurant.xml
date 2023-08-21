@@ -1,0 +1,115 @@
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content1"
+    tools:context="fragments.RestaurantFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/toolBar"
+            layout="@layout/custom_toolbar" />
+
+
+            <EditText
+                android:id="@+id/searchEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toolBar"
+                android:background="@drawable/search_res_background"
+                android:drawableStart="@drawable/ic_baseline_search_24"
+                android:drawablePadding="9dp"
+                android:elevation="7dp"
+                android:fontFamily="@font/open_sans"
+                android:hint="@string/search_restaurants"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="9dp"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="15dp"
+                android:textColor="@color/gray"
+                android:textSize="15sp" />
+        <RelativeLayout
+            android:id="@+id/lay_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/searchEditText"
+            >
+
+            <TextView
+                android:id="@+id/cuisineTextLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="Top cuisines for you"
+                android:textColor="@color/colorAccent"
+                android:textSize="21sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cuisineGridView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cuisineTextLabel"
+                android:layout_marginTop="7dp"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:paddingStart="12dp"
+                android:paddingEnd="23dp" />
+            <!-- <GridView
+                 android:id="@+id/cuisineGridView"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@+id/cuisineTextLabel"
+                 android:layout_marginTop="7dp"
+                 android:horizontalSpacing="1dp"
+                 android:numColumns="3"
+                 android:overScrollMode="never"
+                 android:verticalSpacing="1dp" />-->
+
+            <TextView
+                android:id="@+id/trendingTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/trending"
+                android:layout_below="@+id/cuisineGridView"
+                android:layout_marginTop="21dp"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/colorAccent"
+                android:fontFamily="@font/open_sans_bold"
+                android:textSize="23sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/restaurant_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/trendingTextView"
+                android:layout_marginTop="7dp"
+                android:overScrollMode="never"
+                android:paddingStart="12dp"
+                android:paddingEnd="23dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/searchItemContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/searchEditText"
+            android:background="@color/white">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/searchItemRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
+

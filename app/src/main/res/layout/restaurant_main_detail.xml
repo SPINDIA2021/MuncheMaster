@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        android:minHeight="280dp"
+        android:layout_margin="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/resImage"
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/restaurant_image_placeholder" />
+
+            <TextView
+                android:id="@+id/resName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/resImage"
+                android:layout_marginTop="11dp"
+                android:layout_marginStart="11dp"
+                android:textSize="17sp"
+                android:textColor="@color/colorAccent"
+                android:fontFamily="@font/open_sans"/>
+            <ImageView
+                android:id="@+id/foodMark"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="11dp"
+                android:layout_below="@+id/resImage"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/veg_symbol" />
+            <TextView
+                android:id="@+id/notAvailableText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* Item not available"
+                android:fontFamily="@font/open_sans"
+                android:textStyle="italic"
+                android:textSize="12sp"
+                android:layout_below="@+id/average_price"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="3dp"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/addMenuItemBtn"
+                android:layout_width="80dp"
+                android:layout_height="32dp"
+                android:layout_below="@+id/foodMark"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/menu_item_add_btn_background"
+                android:fontFamily="@font/open_sans"
+                android:text="Add +"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="13sp"
+                android:visibility="visible"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+                android:visibility="gone"
+                android:id="@+id/quantityPicker"
+                android:layout_width="80dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="20dp"
+                android:layout_below="@+id/foodMark"
+                android:layout_alignParentEnd="true"
+                app:backgroundDrawable="@drawable/menu_item_add_btn_background"
+                app:textColor="@color/white"
+                app:textSize="6sp"
+                tools:ignore="UnknownId" />
+
+
+            <TextView
+                android:id="@+id/resCuisine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/resName"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/open_sans"
+                android:text="Barista,Sandwiches"
+                android:textColor="@color/gray"
+                android:textSize="12sp" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/resCuisine"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="5dp"
+                android:numStars="5"
+                android:rating="4"
+                android:theme="@style/RatingBar" />
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/resCuisine"
+                android:layout_toEndOf="@+id/ratingBar"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="5dp"
+                android:text="4.5"
+                android:textColor="@color/gray"
+                android:textSize="12sp"
+                android:fontFamily="@font/open_sans"/>
+
+            <TextView
+                android:id="@+id/average_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_desc"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="11dp"
+                android:fontFamily="@font/open_sans"
+                android:text="\u20B9200 per person | "
+                android:textColor="@color/gray"
+                android:textSize="13sp" />
+            <TextView
+                android:id="@+id/actual_price"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_below="@+id/tv_desc"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="4dp"
+                android:layout_toEndOf="@+id/average_price"
+                android:background="@drawable/close"
+                android:fontFamily="@font/open_sans"
+                android:text="\u20B9200 per person | "
+                android:textColor="@color/gray"
+                android:textSize="13sp"
+                android:layout_marginBottom="11dp"/>
+
+            <TextView
+                android:id="@+id/discount_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_desc"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="11dp"
+                android:layout_toEndOf="@+id/actual_price"
+                android:fontFamily="@font/open_sans"
+                android:text="\u20B9200 per person | "
+                android:textColor="@color/gray"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/average_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ratingBar"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="11dp"
+                android:fontFamily="@font/open_sans"
+                android:text="45 Mins"
+                android:textColor="@color/gray"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

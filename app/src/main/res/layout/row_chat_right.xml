@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="5dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+    <RelativeLayout
+        android:id="@+id/lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true">
+
+        <RelativeLayout
+            android:id="@+id/lay_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back_doc"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/white"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:visibility="visible"
+                android:id="@+id/text_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12/12/1212"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimary"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lay_msg"
+            android:layout_below="@+id/lay_date"
+            android:layout_marginTop="-10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp">
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/lay_img"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/background_right"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true">
+            <utils.RoundedCornerImageview
+                android:id="@+id/img_message"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                app:cornerBottomDisable="false"
+                app:cornerLeftDisable="false"
+                app:cornerRightDisable="false"
+                app:cornerTopDisable="false"
+                android:scaleType="fitXY"
+                app:cornerColor="#ECECEC"
+                app:cornerRadius="2dp"
+                />
+        </RelativeLayout>
+
+
+
+       <!-- <RelativeLayout
+            android:visibility="visible"
+            android:id="@+id/lay_audio"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/background_right"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp">
+
+            <RelativeLayout
+                android:id="@+id/lay_headphone"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/back_doc"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:backgroundTint="@color/white">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/headphone"
+                    android:tint="#9000796B"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/ivPlayPause"
+                android:layout_toRightOf="@+id/lay_headphone"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/ic_play_arrow"
+                android:tint="@color/colorPrimary"/>
+
+            <SeekBar
+                android:id="@+id/sbProgress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/ivPlayPause"/>
+
+        </RelativeLayout>
+-->
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/text_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/background_right"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:text="hello"
+        android:padding="8dp"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <TextView
+        android:visibility="visible"
+        android:id="@+id/text_seen"
+        android:layout_below="@+id/lay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:layout_toLeftOf="@+id/layseen"
+        android:text="seen" />
+
+
+
+    <RelativeLayout
+        android:id="@+id/layseen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lay"
+        android:layout_alignParentRight="true"
+        >
+    <ImageView
+        android:id="@+id/img_seen"
+        android:layout_width="28dp"
+        android:layout_height="17dp"
+        android:src="@drawable/singletick"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        app:tint="@color/grey" />
+    </RelativeLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/text_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/black"
+        android:text="Abc"
+        android:textStyle="bold"/>
+</RelativeLayout>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context="ui.order.CurrentOrderActivity">
+
+
+    <include
+        android:id="@+id/currentOrderToolBar"
+        layout="@layout/custom_current_order_toolbar" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/currentOrderToolBar"
+        android:layout_above="@+id/orderTimerContainer"
+        android:layout_marginHorizontal="20dp"
+        >
+
+        <com.mapbox.mapboxsdk.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            mapbox:mapbox_cameraZoom="12" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:background="@drawable/back_foodcard"
+            android:layout_marginBottom="20dp"
+
+            android:layout_marginHorizontal="20dp">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/deliveryAnimation"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:scaleType="centerCrop"
+                mapbox:lottie_autoPlay="true"
+                mapbox:lottie_loop="true"
+                mapbox:lottie_rawRes="@raw/delivery" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/deliveryAnimation"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/text_ridername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/open_sans"
+                    android:text="Rider Name"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+                <TextView
+                    android:id="@+id/text_yourrider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/open_sans"
+                    android:text="Your rider"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@color/grey"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/callResBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/get_location_button_background"
+                android:drawableStart="@drawable/call_res"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="Call"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/orderTimerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/img_clock"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/clock" />
+
+        <ImageView
+            android:id="@+id/img_dot1"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_below="@+id/img_clock"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/dots"
+            mapbox:tint="#9F9F9F" />
+
+        <ImageView
+            android:id="@+id/img_dot2"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_below="@+id/img_dot1"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/dots"
+            mapbox:tint="#9F9F9F" />
+
+        <ImageView
+            android:id="@+id/img_dot3"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_below="@+id/img_dot2"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/dots"
+            mapbox:tint="#9F9F9F" />
+
+        <TextView
+            android:id="@+id/arrivingInId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@+id/img_clock"
+            android:fontFamily="@font/open_sans"
+            android:text="ARRIVING IN"
+            android:textColor="@color/grey"
+            android:textSize="12sp" />
+
+        <ir.samanjafari.easycountdowntimer.EasyCountDownTextview
+            android:id="@+id/easyCountDownTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/arrivingInId"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@+id/img_clock"
+            app:colonColor="@color/grey"
+            app:digitBackground="@color/white"
+            app:setAnimation="true"
+            app:showDays="false"
+            app:showHours="false"
+            app:textColor="@color/gray"
+            app:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/timeLeftText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/arrivingInId"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/easyCountDownTextview"
+            android:fontFamily="@font/open_sans_semibold"
+            android:textColor="@color/gray"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/img_home"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/img_dot3"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/home" />
+
+        <TextView
+            android:id="@+id/text_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="21dp"
+            android:fontFamily="@font/open_sans"
+            android:text="234 Km"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:layout_below="@+id/easyCountDownTextview"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="21dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/darker_gray"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/currentOrderResName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_dot2"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@+id/img_home"
+            android:fontFamily="@font/open_sans_semibold"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/currentOrderResLoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/currentOrderResName"
+            android:layout_marginStart="21dp"
+            android:layout_marginBottom="12dp"
+            android:layout_toRightOf="@+id/img_home"
+            android:fontFamily="@font/open_sans"
+            android:text="Sector-41, Noida"
+            android:textSize="12sp" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

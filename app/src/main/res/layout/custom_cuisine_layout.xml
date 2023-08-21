@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="12dp"
+    android:background="@color/white"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cuisineImageCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="7dp"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/cuisineImage"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:scaleType="centerCrop" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/cuisineName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cuisineImageCard"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7dp"
+        android:fontFamily="@font/open_sans"
+        android:maxWidth="120dp"
+        android:text="Biryani"
+        android:textColor="@color/gray"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/average_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cuisineName"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="11dp"
+        android:fontFamily="@font/open_sans"
+        android:text="\u20B9200 per person | "
+        android:textColor="@color/gray"
+        android:textSize="13sp" />
+    <TextView
+        android:id="@+id/actual_price"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_below="@+id/cuisineName"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@+id/average_price"
+        android:background="@drawable/close"
+        android:fontFamily="@font/open_sans"
+        android:text="\u20B9200 per person | "
+        android:textColor="@color/gray"
+        android:textSize="13sp"
+        android:layout_marginBottom="11dp"/>
+    <TextView
+        android:id="@+id/discount_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cuisineName"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@+id/actual_price"
+        android:fontFamily="@font/open_sans"
+        android:text="\u20B9200 per person | "
+        android:textColor="@color/gray"
+        android:textSize="13sp"
+        android:layout_marginBottom="11dp"/>
+
+    <Button
+        android:id="@+id/addMenuItemBtn"
+        android:layout_width="80dp"
+        android:layout_height="32dp"
+        android:layout_below="@+id/discount_price"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/menu_item_add_btn_background"
+        android:fontFamily="@font/open_sans"
+        android:text="Add +"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccent"
+        android:textSize="13sp"
+        android:visibility="visible"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+        android:visibility="gone"
+        android:id="@+id/quantityPicker"
+        android:layout_width="80dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/discount_price"
+        android:layout_alignParentEnd="true"
+        app:backgroundDrawable="@drawable/menu_item_add_btn_background"
+        app:textColor="@color/white"
+        app:textSize="6sp"
+        tools:ignore="UnknownId" />
+
+
+
+</RelativeLayout>

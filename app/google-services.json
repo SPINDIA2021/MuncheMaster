@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "570076452929",
+    "firebase_url": "https://food-393d3-default-rtdb.firebaseio.com",
+    "project_id": "food-393d3",
+    "storage_bucket": "food-393d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570076452929:android:1afed0c87cf211c9170ec0",
+        "android_client_info": {
+          "package_name": "com.spindia.food"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570076452929-33h8gb0oddpa81aqot3qbnkoncagjtte.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.spindia.food",
+            "certificate_hash": "9aa8b0368489e19785274892545098be7b9fd0cc"
+          }
+        },
+        {
+          "client_id": "570076452929-pgheanp089av1fr7g8l6aujmpq7mo81f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbpIuK5p46as4DDDBUmZnueDvj7QeQ7BA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570076452929-pgheanp089av1fr7g8l6aujmpq7mo81f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570076452929:android:ef5c084a5d1cfb83170ec0",
+        "android_client_info": {
+          "package_name": "com.spindia.muncherestaurantpartner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570076452929-ni5uoakhs2tca602964etngdapfdr9lv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.spindia.muncherestaurantpartner",
+            "certificate_hash": "9aa8b0368489e19785274892545098be7b9fd0cc"
+          }
+        },
+        {
+          "client_id": "570076452929-pgheanp089av1fr7g8l6aujmpq7mo81f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbpIuK5p46as4DDDBUmZnueDvj7QeQ7BA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570076452929-pgheanp089av1fr7g8l6aujmpq7mo81f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

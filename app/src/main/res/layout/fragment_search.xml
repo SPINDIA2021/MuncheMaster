@@ -1,0 +1,50 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fragments.SearchFragment"
+    android:background="@color/blue_grey">
+
+    <RelativeLayout
+        android:id="@+id/searchContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="17dp"
+        android:background="@color/white"
+        android:layout_marginBottom="5dp">
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/search_res_background"
+            android:drawableStart="@drawable/ic_baseline_search_24"
+            android:drawablePadding="9dp"
+            android:elevation="7dp"
+            android:fontFamily="@font/open_sans"
+            android:hint="@string/search_restaurants"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="9dp"
+            android:textColor="@color/gray"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/searchItemContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searchContainer"
+        android:background="@color/white">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/searchItemRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

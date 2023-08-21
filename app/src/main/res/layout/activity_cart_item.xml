@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="ui.cart.CartItemActivity"
+    android:background="@color/blue_grey"
+    android:fitsSystemWindows="false">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="fragments.CartItemFragment"
+        android:id="@+id/viewContainer"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blue_grey">
+
+            <include layout="@layout/cart_item_layout_toolbar"
+                android:id="@+id/cartItemToolBar"/>
+
+            <RelativeLayout
+                android:id="@+id/cartItemContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cartItemToolBar"
+                android:padding="12dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/restaurantCartName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Restaurant Name"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/cartItemRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/restaurantCartName"
+                    android:layout_marginTop="11dp"
+                    android:overScrollMode="never" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/completeItemContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cartItemContainer"
+                android:padding="12dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/completeItemName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Complete Your Meal:"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="14sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/completeItemRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/completeItemName"
+                    android:layout_marginTop="11dp"
+                    android:overScrollMode="never" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/completeItemContainer"
+                android:layout_marginTop="13dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:weightSum="5">
+
+                <ImageView
+                    android:id="@+id/editImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/extra_instructions" />
+
+                <EditText
+                    android:id="@+id/extraInstructionEdiText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="4"
+                    android:background="@color/white"
+                    android:fontFamily="@font/open_sans"
+                    android:hint="Any cooking instructions?"
+                    android:maxLines="2"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        android:id="@+id/bottomSheet"
+        android:padding="17dp"
+        android:elevation="30dp"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/deliveringAtText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delivering at:"
+            android:fontFamily="@font/open_sans_semibold"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/userDeliveryAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/deliveringAtText"
+            android:fontFamily="@font/open_sans"
+            android:textColor="@color/gray"
+            android:layout_marginTop="1dp"/>
+
+        <TextView
+            android:id="@+id/changeAddressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Change"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="@font/open_sans_bold"
+            android:textSize="15sp"/>
+
+        <View
+            android:id="@+id/cartDivider"
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="@color/grey"
+            android:layout_below="@+id/userDeliveryAddress"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="13dp"/>
+
+        <TextView
+            android:id="@+id/totAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cartDivider"
+            android:text="Amount Payable: "
+            android:fontFamily="@font/open_sans_semibold"
+            android:textColor="@color/colorAccent"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/amountSaved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/totAmount"
+            android:layout_marginTop="1dp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:text="You Save: "
+            android:textColor="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/payAmountBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cartDivider"
+            android:layout_alignParentEnd="true"
+            android:text="Checkout"
+            android:fontFamily="@font/open_sans_semibold"
+            android:background="@drawable/pay_button_amt"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textAllCaps="false"/>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
